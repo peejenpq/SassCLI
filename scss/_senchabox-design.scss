@@ -1,0 +1,58 @@
+======================================================
+_my-variables.scss
+======================================================
+$my-color1 : gold;
+$my-color2 : #ff6c1d;
+$my-color3 : #a729ff;
+$my-color4 : #35ddff;
+$my-color5 : #6cffbb;
+
+$radius1 : 3px;
+$radius2 : 5px;
+$radius2 : 8px;
+$radius2 : 10px;
+$radius2 : 15px;
+
+======================================================
+_function-mixin.scss
+======================================================
+
+@mixin fnc-border-radius($input_radius,$input_color) {
+  background-color: $input_color;
+  -webkit-border-radius: $input_radius;
+  -moz-border-radius: $input_radius;
+  -ms-border-radius: $input_radius;
+  border-radius: $input_radius;
+}
+
+@mixin fnc-txt-shadow($input_textColor,$shadow-color1,$shadow-color2,$shadow-color3) {
+  text-transform: uppercase;
+  color: $input_textColor;
+  text-shadow: 1px 1px 2px $shadow-color1, 0 0 25px $shadow-color2, 0 0 5px $shadow-color3;
+}
+
+======================================================
+_box-custom.scss
+======================================================
+
+.box-radius1 {
+  @include fnc-border-radius($radius1,$my-color1);
+}
+
+.box-radius2 {
+  @include fnc-border-radius($radius2,$my-color2);
+  @include fnc-txt-shadow(white,red,green,blue);
+}
+
+.box-radius3 {
+  @include fnc-border-radius($radius3,$my-color3);
+}
+
+.box-radius4 {
+  @include fnc-border-radius($radius4,$my-color4);
+  @include fnc-txt-shadow(white,red,green,blue);
+}
+
+.box-radius5 {
+  @include fnc-border-radius($radius5,$my-color5);
+}

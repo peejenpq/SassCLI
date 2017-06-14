@@ -1,0 +1,44 @@
+Fix Bug for Ionic CLI v2.1.1 before use SASS
+by Senchabox.com
+
+===================================================
+SASS Language Setup
+===================================================
+
+1. npm install -g ionic
+
+2. ionic setup sass
+
+3. gulpfile.js
+
+gulp.task('watch', function() {
+  gulp.watch(paths.sass, ['sass']);
+});
+
+gulp.task('serve:before', [ "sass", "watch"], function() {
+});
+
+===================================================
+SASS Awesome
+===================================================
+
+1. Variables
+
+2. Mixins
+
+3. Partials SASS file config gulpjs áÂ¡ä¿Åì
+
+gulp.task('sass', function(done) {
+  gulp.src('./scss/**/*.scss') <------
+    .pipe(sass({errLogToConsole: true}))
+    .on('error', sass.logError)
+    .pipe(gulp.dest('./www/css/'))
+    .pipe(minifyCss({
+      keepSpecialComments: 0
+    }))
+    .pipe(rename({ extname: '.min.css' }))
+    .pipe(gulp.dest('./www/css/'))
+    .on('end', done);
+});
+4.Create File scss _example.scss
+5.Import file @Import "...";
